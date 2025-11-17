@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz 23 Años! - Una Aventura Inolvidable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-light: #e6f2ff;
+            --primary-medium: #b3d9ff;
+            --primary-dark: #80bfff;
+            --accent-blue: #66b3ff;
+            --accent-light: #cce6ff;
+            --text-dark: #3366cc;
+            --text-light: #6699cc;
+            --white: #ffffff;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+            --love-pink: #ff6b9d;
+            --love-red: #ff4757;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-medium));
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        /* Corazones flotantes de fondo */
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            color: var(--love-pink);
+            opacity: 0.3;
+            animation: floatHeart linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 15px 40px rgba(102, 153, 204, 0.3), 0 0 20px rgba(255, 107, 157, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 107, 157, 0.1));
+            pointer-events: none;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            text-shadow: 0 2px 10px rgba(255, 107, 157, 0.3);
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin: 30px 0 20px;
+            text-align: center;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-blue), var(--love-pink));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .age-number {
+            font-size: 8rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--love-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(102, 179, 255, 0.3);
+            animation: numberShine 3s ease-in-out infinite;
+        }
+        
+        @keyframes numberShine {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+        
+        .section {
+            padding: 80px 20px;
+            margin: 40px 0;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 40px rgba(102, 153, 204, 0.25);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-blue), var(--love-pink), var(--primary-dark));
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .activity-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            cursor: pointer;
+            border: 1px solid var(--accent-light);
+            box-shadow: 0 8px 20px rgba(102, 153, 204, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .activity-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-blue), var(--love-pink));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        
+        .activity-card::after {
+            content: '♥';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: var(--love-pink);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 153, 204, 0.3), 0 0 30px rgba(255, 107, 157, 0.2);
+        }
+        
+        .activity-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .activity-card:hover::after {
+            opacity: 1;
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .activity-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--accent-blue);
+            transition: transform 0.4s;
+            filter: drop-shadow(0 5px 10px rgba(102, 179, 255, 0.3));
+        }
+        
+        .activity-card:hover .activity-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .activity-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .activity-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Modal mejorado */
+        .activity-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(230, 242, 255, 0.95));
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: modalAppear 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            color: var(--love-red);
+            transform: rotate(90deg) scale(1.2);
+        }
+        
+        .modal-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .modal-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .strength-section {
+            text-align: center;
+        }
+        
+        .qualities {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .quality {
+            background: linear-gradient(135deg, var(--white), var(--accent-light));
+            padding: 25px 20px;
+            border-radius: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(102, 153, 204, 0.15);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .quality:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102, 153, 204, 0.25);
+            border-color: var(--love-pink);
+        }
+        
+        .quality i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+        
+        .quality h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .quality p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .message-section {
+            text-align: center;
+            position: relative;
+        }
+        
+        .code-message {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, var(--white), var(--accent-light));
+            padding: 40px 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            border-left: 5px solid var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(102, 153, 204, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .code-message::before {
+            content: '♥';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: var(--love-pink);
+            opacity: 0.1;
+        }
+        
+        .code-line {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            color: var(--text-dark);
+        }
+        
+        .code-line:nth-child(1) { animation-delay: 0.5s; }
+        .code-line:nth-child(2) { animation-delay: 1s; }
+        .code-line:nth-child(3) { animation-delay: 1.5s; }
+        .code-line:nth-child(4) { animation-delay: 2s; }
+        .code-line:nth-child(5) { animation-delay: 2.5s; }
+        .code-line:nth-child(6) { animation-delay: 3s; }
+        .code-line:nth-child(7) { animation-delay: 3.5s; }
+        .code-line:nth-child(8) { animation-delay: 4s; }
+        .code-line:nth-child(9) { animation-delay: 4.5s; }
+        
+        .music-player {
+            background: linear-gradient(135deg, var(--white), var(--accent-light));
+            border-radius: 15px;
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 153, 204, 0.2);
+        }
+        
+        .song-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .song-btn {
+            background: var(--accent-light);
+            border: 2px solid var(--accent-blue);
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .song-btn::before {
+            content: '♪';
+            position: absolute;
+            left: 15px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .song-btn:hover {
+            background: linear-gradient(135deg, var(--accent-blue), var(--love-pink));
+            color: white;
+            transform: translateX(10px);
+            border-color: var(--love-pink);
+        }
+        
+        .song-btn:hover::before {
+            opacity: 1;
+            left: 10px;
+        }
+        
+        .video-container {
+            margin-top: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--accent-light);
+            color: var(--text-light);
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 1;
+            color: var(--accent-blue);
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        /* Juegos mejorados */
+        .interactive-activity {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, var(--accent-light), var(--white));
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: var(--text-dark);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .stat:hover {
+            transform: scale(1.05);
+        }
+        
+        .game-container {
+            background: linear-gradient(to bottom, #cce6ff, #e6f2ff);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Escalada mejorada */
+        .climbing-game {
+            height: 500px;
+            position: relative;
+        }
+        
+        .climbing-wall {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom, #80bfff, #b3d9ff);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.2);
+        }
+        
+        .climbing-handhold {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 2;
+            border: 3px solid rgba(255,255,255,0.5);
+        }
+        
+        .climbing-handhold:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(102, 179, 255, 0.5);
+        }
+        
+        .climbing-handhold.active {
+            background: linear-gradient(135deg, var(--success), #45a049);
+            animation: pulse 0.5s, heartbeat 1s infinite;
+        }
+        
+        .climbing-handhold.wrong {
+            background: linear-gradient(135deg, var(--danger), #d32f2f);
+            animation: shake 0.5s;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .climbing-character {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 3;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+        }
+        
+        .waterfall {
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                rgba(255,255,255,0.4), 
+                rgba(255,255,255,0.7), 
+                rgba(255,255,255,0.4),
+                transparent);
+            animation: waterfallFlow 3s linear infinite;
+            opacity: 0.6;
+        }
+        
+        /* Rafting mejorado */
+        .rafting-game {
+            height: 400px;
+            position: relative;
+        }
+        
+        .rafting-river {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom, 
+                #66b3ff, 
+                #3399ff, 
+                #66b3ff);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.2);
+        }
+        
+        .rafting-obstacle {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(135deg, #804000, #a05000);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+        }
+        
+        .rafting-obstacle.rock {
+            background: linear-gradient(135deg, #666, #888);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+        
+        .rafting-obstacle.whirlpool {
+            background: radial-gradient(circle, #004080, #003366, #004080);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: whirlpoolSpin 3s linear infinite;
+            box-shadow: 0 0 30px rgba(0, 64, 128, 0.7);
+        }
+        
+        .rafting-boat {
+            position: absolute;
+            bottom: 30px;
+            left: 10%;
+            font-size: 4rem;
+            transition: all 0.2s;
+            z-index: 3;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+        }
+        
+        .river-wave {
+            position: absolute;
+            width: 200%;
+            height: 30px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.3) 20px,
+                rgba(255,255,255,0.3) 40px
+            );
+            bottom: 0;
+            animation: waveMove 3s linear infinite;
+        }
+        
+        /* Circuito aéreo mejorado */
+        .aerial-game {
+            height: 450px;
+            position: relative;
+        }
+        
+        .aerial-course {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom, 
+                #b3d9ff, 
+                #cce6ff,
+                #e6f2ff);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+        }
+        
+        .aerial-platform {
+            position: absolute;
+            width: 100px;
+            height: 25px;
+            background: linear-gradient(135deg, #804000, #a05000);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid #5a2d00;
+        }
+        
+        .aerial-platform:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(128, 64, 0, 0.6);
+        }
+        
+        .aerial-rope {
+            position: absolute;
+            height: 3px;
+            background: linear-gradient(to right, #804000, #a05000);
+            transform-origin: 0 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .aerial-character {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            font-size: 3rem;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 3;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+        }
+        
+        .cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+        
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+        }
+        
+        /* Controles */
+        .game-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .game-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .game-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .game-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        .game-btn:disabled {
+            background: linear-gradient(135deg, var(--text-light), #999);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .level-complete {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(204, 230, 255, 0.98));
+            padding: 30px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            z-index: 10;
+            display: none;
+            border: 3px solid var(--accent-blue);
+        }
+        
+        .completion-message {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--success), #45a049);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: celebration 1s ease-in-out infinite;
+        }
+        
+        @keyframes celebration {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+        
+        /* Animaciones */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+            20%, 40%, 60%, 80% { transform: translateX(8px); }
+        }
+        
+        @keyframes waterfallFlow {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        @keyframes whirlpoolSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+        
+        @keyframes floatBubble {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+        
+        /* Efectos de partículas */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: particleRise 3s ease-out forwards;
+        }
+        
+        @keyframes particleRise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        /* Barra de progreso para juegos */
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-blue), var(--love-pink));
+            width: 0%;
+            transition: width 0.3s;
+            box-shadow: 0 0 10px rgba(102, 179, 255, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .age-number { font-size: 5rem; }
+            .activities-grid { grid-template-columns: 1fr; }
+            .qualities { gap: 15px; }
+            .quality { width: 160px; }
+            .modal-content { padding: 20px; }
+            .game-stats { flex-direction: column; gap: 10px; }
+            .video-container iframe { height: 200px; }
+            .game-header { flex-direction: column; }
+            .climbing-game { height: 400px; }
+            .rafting-game { height: 300px; }
+            .aerial-game { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de corazones flotantes -->
+    <div class="heart-container" id="heart-container"></div>
+
+    <div class="container">
+        <header>
+            <div class="floating-element" style="top: 10%; left: 5%; font-size: 2rem;">❄️</div>
+            <div class="floating-element" style="top: 20%; right: 10%; font-size: 3rem;">💎</div>
+            <div class="floating-element" style="bottom: 15%; left: 15%; font-size: 2.5rem;">✨</div>
+            <div class="floating-element" style="bottom: 25%; right: 5%; font-size: 2rem;">🔷</div>
+            
+            <div class="header-content">
+                <h1>¡Feliz Cumpleaños!</h1>
+                <div class="age-number">23</div>
+                <p class="intro-text">Un nuevo año de aventuras, sueños y momentos inolvidables comienza hoy. Estamos aquí para celebrar la persona increíble que eres.</p>
+            </div>
+        </header>
+        
+        <section class="section" id="adventures">
+            <h2>Experiencias que te Esperan</h2>
+            <p class="intro-text">Descubre nuevas formas de conectar con la naturaleza y contigo misma en estas experiencias únicas.</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card" data-activity="climbing">
+                    <div class="activity-icon">💧</div>
+                    <h3>El Ascenso Vertical</h3>
+                    <p>Donde la fuerza se encuentra con la gravedad, y cada movimiento es un desafío que te acerca al cielo. Una experiencia que pondrá a prueba tu determinación mientras te rodea la fuerza de la naturaleza en su estado más puro.</p>
+                </div>
+                
+                <div class="activity-card" data-activity="rafting">
+                    <div class="activity-icon">🌊</div>
+                    <h3>El Baile con la Corriente</h3>
+                    <p>Una danza coordinada con las fuerzas naturales, donde aprenderás a leer el movimiento y a navegar con su ritmo. Una aventura que combina trabajo en equipo con la emoción de lo impredecible.</p>
+                </div>
+                
+                <div class="activity-card" data-activity="aerial">
+                    <div class="activity-icon">☁️</div>
+                    <h3>El Camino entre las Nubes</h3>
+                    <p>Un recorrido elevado donde cada paso es un acto de fe y cada obstáculo superado te da una nueva perspectiva. Desde las alturas, el mundo se ve diferente, y tú descubrirás fortalezas que no sabías que tenías.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal para El Ascenso Vertical -->
+        <div class="activity-modal" id="climbing-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-icon">💧</div>
+                <h2 class="modal-title">El Ascenso Vertical</h2>
+                <p>En esta experiencia, enfrentarás el desafío de ascender por superficies verticales. Cada agarre que encuentres te acercará más a la cima.</p>
+                
+                <div class="interactive-activity">
+                    <div class="game-header">
+                        <h3>Desafío Vertical</h3>
+                        <div class="game-stats">
+                            <div class="stat">Nivel: <span id="climbing-level">1</span></div>
+                            <div class="stat">Puntos: <span id="climbing-score">0</span></div>
+                            <div class="stat">Tiempo: <span id="climbing-time">60</span>s</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="climbing-progress"></div>
+                    </div>
+                    
+                    <div class="game-container">
+                        <div class="climbing-game">
+                            <div class="climbing-wall" id="climbing-wall">
+                                <div class="climbing-character" id="climber">🧗‍♀️</div>
+                                <div class="waterfall" style="left: 15%"></div>
+                                <div class="waterfall" style="left: 50%"></div>
+                                <div class="waterfall" style="left: 85%"></div>
+                            </div>
+                            <div class="level-complete" id="climbing-complete">
+                                <div class="completion-message">¡Nivel Completado! 🎉</div>
+                                <p>Has superado exitosamente este desafío</p>
+                                <button class="game-btn" id="climbing-next">Siguiente Nivel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button class="game-btn" id="start-climbing">Comenzar</button>
+                        <button class="game-btn" id="reset-climbing">Reiniciar</button>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem;">💡 Haz clic en los agarres en orden numérico para escalar</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para El Baile con la Corriente -->
+        <div class="activity-modal" id="rafting-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-icon">🌊</div>
+                <h2 class="modal-title">El Baile con la Corriente</h2>
+                <p>Navegarás por aguas en movimiento, esquivando obstáculos y dejándote llevar por la corriente. La clave está en mantener el equilibrio y fluir con el movimiento.</p>
+                
+                <div class="interactive-activity">
+                    <div class="game-header">
+                        <h3>Navegación</h3>
+                        <div class="game-stats">
+                            <div class="stat">Nivel: <span id="rafting-level">1</span></div>
+                            <div class="stat">Distancia: <span id="rafting-distance">0</span>m</div>
+                            <div class="stat">Vidas: <span id="rafting-lives">❤️❤️❤️</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="rafting-progress"></div>
+                    </div>
+                    
+                    <div class="game-container">
+                        <div class="rafting-game">
+                            <div class="rafting-river" id="rafting-river">
+                                <div class="rafting-boat" id="rafting-boat">🛶</div>
+                                <div class="river-wave"></div>
+                            </div>
+                            <div class="level-complete" id="rafting-complete">
+                                <div class="completion-message">¡Navegación Exitosa! 🎉</div>
+                                <p>Has superado los desafíos de este nivel</p>
+                                <button class="game-btn" id="rafting-next">Siguiente Nivel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button class="game-btn" id="start-rafting">Iniciar</button>
+                        <button class="game-btn" id="reset-rafting">Reiniciar</button>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem;">💡 Usa las flechas del teclado para moverte y esquivar obstáculos</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para El Camino entre las Nubes -->
+        <div class="activity-modal" id="aerial-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-icon">☁️</div>
+                <h2 class="modal-title">El Camino entre las Nubes</h2>
+                <p>Desafía la gravedad mientras te desplazas por un circuito elevado. Cada paso requiere equilibrio y confianza, pero la recompensa son vistas espectaculares y una sensación de logro incomparable.</p>
+                
+                <div class="interactive-activity">
+                    <div class="game-header">
+                        <h3>Circuito Elevado</h3>
+                        <div class="game-stats">
+                            <div class="stat">Nivel: <span id="aerial-level">1</span></div>
+                            <div class="stat">Progreso: <span id="aerial-progress">0</span>%</div>
+                            <div class="stat">Puntos: <span id="aerial-score">0</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="aerial-progress-bar"></div>
+                    </div>
+                    
+                    <div class="game-container">
+                        <div class="aerial-game">
+                            <div class="aerial-course" id="aerial-course">
+                                <div class="aerial-character" id="aerial-character">🚶‍♀️</div>
+                            </div>
+                            <div class="level-complete" id="aerial-complete">
+                                <div class="completion-message">¡Circuito Completado! 🎉</div>
+                                <p>Has superado este desafío aéreo</p>
+                                <button class="game-btn" id="aerial-next">Siguiente Nivel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button class="game-btn" id="start-aerial">Iniciar</button>
+                        <button class="game-btn" id="reset-aerial">Reiniciar</button>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem;">💡 Haz clic en las plataformas en orden para avanzar</p>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section strength-section">
+            <h2>Tu Esencia</h2>
+            <p class="intro-text">Estas experiencias reflejan las cualidades que te hacen única y especial:</p>
+            
+            <div class="qualities">
+                <div class="quality">
+                    <i class="fas fa-compass"></i>
+                    <h3>Intrépida</h3>
+                    <p>Buscas siempre nuevos horizontes</p>
+                </div>
+                
+                <div class="quality">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Ágil</h3>
+                    <p>Te adaptas con gracia a cada desafío</p>
+                </div>
+                
+                <div class="quality">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Resiliente</h3>
+                    <p>Superas cualquier obstáculo con determinación</p>
+                </div>
+                
+                <div class="quality">
+                    <i class="fas fa-water"></i>
+                    <h3>Fluida</h3>
+                    <p>Encuentras tu camino sin importar los desafíos</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section message-section">
+    <h2>¡Feliz 23 Años, Mi Aventurera del Alma!</h2>
+    <div class="code-message">
+        <div class="code-line"></div>
+        <div class="code-line">Mi amor, quiero empezar este mensaje diciéndote lo profundamente especial que eres para mí. Sin importar las circunstancias, siempre quiero estar contigo, siempre voy a elegirte cada día porque tú eres mi luz, mi paz y mi camino cuando no tengo rumbo. Eres esa persona única en mi vida que nunca querría cambiar, que siempre quiero tener a mi lado amándote, queriéndote, deseándote e idolatrándote.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Sé que fue una semana difícil para los dos, pero mira, aquí estamos juntos, apoyándonos y estando el uno para el otro. De verdad, discúlpame por hacerte preocuparte por mí y por lo que te conté de mi familia. Espero que eso no haya influido mucho en lo que disfrutaste hoy con tu familia.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Estoy ansioso por ver tu carita y por todo lo que vamos a hacer el 22. Estoy emocionado por darte esa sorpresa, y aunque sé que no te gustan las sorpresas por si es algo que no te agrada vas a estar enojada conmigo todo el día, mira, a pesar de eso siempre te las doy el gusto por que es algo que no se te ocurriría que fuéramos a hacer y se lo que te gusta porque te conozco y sé que lo que vamos a hacer te va a gustar y te va a encantar. A mí no tanto porque no sé nadar, pero no hay problema, tú me salvas mientras aprendo, jejeje.</div>
+        <div class="code-line"></div>
+        <div class="code-line">No sé por qué cuando te doy sorpresas siempre te encantan, y sé que en este momento cuando lo lees vas a decir "seguro" o algo así para molestarme, mi amor. Pero sí, todo lo que hago por ti, mis sorpresas, mi forma de tratarte, mi forma de atenderte, te encanta porque yo soy el mejor novio y futuro esposo que vas a tener, cielo. Quien siempre te cumplirá todos tus caprichos, todo lo que quieras, amor mío.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Te amo, cielo, y espero que con lo que vas a ver te alegre el día mucho más de lo que estás ahora. Bueno, en este momento me llamaste cuando estoy terminando de escribir, o bueno, la parte que me faltaba. Pensé que ibas a estar peor, pero me alegro que no sea así, cielo mío. TE AMO, COSHITA MÍA.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Hoy no solo celebramos un año más de tu vida, mi amor, sino que marcamos el inicio de un capítulo lleno de experiencias que reflejan exactamente lo que eres: valiente, fuerte, magnífica, extraordinaria y todos los sinónimos que hay de ser la mejor mujer de este mundo, cielo mío.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Este nuevo año viene cargado de promesas de adrenalina y superación personal, porque sé que los desafíos son donde tú brillas con más fuerza. Cada una de las experiencias que viviremos representa una faceta de tu increíble personalidad, donde nunca te dejas caer, donde siempre eres lo mejor de este mundo. Tú eres mis alas, mi talón de Aquiles (bueno, no sé si la referencia está bien dicha, amor, jejeje). Cada cosita que vamos a hacer ese día es algo que te representa, mi amor.</div>
+        <div class="code-line"></div>
+        <div class="code-line">En El Ascenso Vertical veremos esa determinación inquebrantable que tienes, esa capacidad de encontrar agarres donde otros solo ven obstáculos. Como en la vida, cada paso hacia arriba te acerca más a tus metas, y tú demuestras que no hay altura que no puedas conquistar.</div>
+        <div class="code-line"></div>
+        <div class="code-line">En El Baile con la Corriente demostrarás esa increíble habilidad para fluir con los cambios, para adaptarte con gracia a las circunstancias y salir fortalecida de cada momento difícil que la vida te presente. Eres como el agua: flexible pero poderosa, suave pero persistente.</div>
+        <div class="code-line"></div>
+        <div class="code-line">En El Camino entre las Nubes veremos esa valentía que te caracteriza, esa capacidad de mirar hacia abajo sin miedo y seguir avanzando. Porque tú eres de esas personas que encuentran en cada desafío una oportunidad para crecer, en cada obstáculo una razón para ser más fuerte.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Estas experiencias no son solo actividades, son metáforas de cómo enfrentas la vida: con coraje, con pasión y con esa sonrisa que ilumina incluso los momentos más desafiantes. Y esto me refiero a cómo tú me rescatas con una sonrisa de un momento difícil, de cómo me haces reír cuando estamos en situaciones complicadas. Eres esa luz que me llena de alegría, de felicidad, y me quitas lo enojado, lo molesto que esté por lo que sea. Hoy, con solo ver tu sonrisa, tus ojitos preciosos, me quitaste ese sentimiento que tuve todo el día por la situación que te conté, mi amor. Gracias por ser tú, por ser una persona tan magnífica, tan hermosa, tan preciosa. TE AMOOOO.</div>
+        <div class="code-line"></div>
+        <div class="code-line">En tus 23 años, quiero que recuerdes que:</div>
+        <div class="code-line"></div>
+        <div class="code-line">Eres más fuerte de lo que crees</div>
+        <div class="code-line">Más capaz de lo que imaginas</div>
+        <div class="code-line">Y más especial de lo que nadie pueda describir</div>
+        <div class="code-line"></div>
+        <div class="code-line">Que este nuevo año de vida te traiga tantas alegrías como estrellas hay en el cielo, tantas aventuras conmigo (porque soy tu única aventura, cara de Perry guiñol, jejeje), y tanto amor como el que siento al tener la oportunidad de compartir estos momentos únicos contigo.</div>
+        <div class="code-line"></div>
+        <div class="code-line">Eres esa persona que transforma los desafíos en recuerdos inolvidables, los miedos en adrenalina pura, y los sueños en realidades tangibles. Por eso, no podría imaginarte una celebración más perfecta que esta: rodeada de naturaleza, retos y la promesa de momentos que quedarán grabados en nuestra memoria para siempre.</div>
+        <div class="code-line"></div>
+        <div class="code-line">¡Feliz cumpleaños, mi valiente aventurera!</div>
+        <div class="code-line">Que este sea solo el comienzo de un año lleno de logros, risas compartidas y experiencias que nos unan aún más, coshita mía. Te adoro, te amo, te idolatro, vida mía.</div>
+        <div class="code-line"></div>
+    </div>
+</section>
+        
+        <section class="section">
+            <h2>Tu Serenata</h2>
+            <div class="music-player">
+                <p>Selecciona una canción para tu serenata especial</p>
+                
+                <div class="song-selection">
+                    <button class="song-btn" data-video="Iqo8SidtWe8">Canción 1: Melodía de Aventura</button>
+                    <button class="song-btn" data-video="Vsyem73dIgo">Canción 2: Sinfonía de Emociones</button>
+                    <button class="song-btn" data-video="E2ybXoBJLt8">Canción 3: Balada de los Sueños</button>
+                </div>
+                
+                <div class="video-container">
+                    <iframe id="youtube-player" width="100%" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Con todo nuestro cariño en tu día especial • 23 años de pura magia</p>
+        </footer>
+    </div>
+
+    <script>
+        // =============================================
+        // CORAZONES FLOTANTES DE FONDO
+        // =============================================
+        function createFloatingHearts() {
+            const heartContainer = document.getElementById('heart-container');
+            const heartCount = 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '♥';
+                
+                const size = Math.random() * 30 + 20;
+                heart.style.fontSize = size + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                heartContainer.appendChild(heart);
+            }
+        }
+        
+        // Crear burbujas decorativas
+        function createBubbles() {
+            const bubblesCount = 15;
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < bubblesCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                const size = Math.random() * 60 + 20;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.top = Math.random() * 100 + 'vh';
+                
+                bubble.style.animation = `floatBubble ${Math.random() * 10 + 10}s infinite ease-in-out`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(bubble);
+            }
+        }
+        
+        // Efecto de elementos flotantes
+        document.querySelectorAll('.floating-element').forEach(el => {
+            el.style.animation = `float ${Math.random() * 10 + 10}s infinite ease-in-out`;
+            el.style.animationDelay = `${Math.random() * 5}s`;
+        });
+        
+        // Inicializar efectos al cargar la página
+        window.addEventListener('load', () => {
+            createFloatingHearts();
+            createBubbles();
+        });
+        
+        // Función para crear partículas de celebración
+        function createParticles(x, y, container) {
+            const particles = ['✨', '⭐', '💫', '🌟', '💖'];
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                
+                const angle = (Math.PI * 2 * i) / 8;
+                const distance = Math.random() * 50 + 30;
+                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                
+                container.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 3000);
+            }
+        }
+        
+        // =============================================
+        // FUNCIONALIDAD PARA LOS MODALES
+        // =============================================
+        const activityCards = document.querySelectorAll('.activity-card');
+        const modals = document.querySelectorAll('.activity-modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+        
+        activityCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const activity = card.getAttribute('data-activity');
+                const modal = document.getElementById(`${activity}-modal`);
+                modal.style.display = 'flex';
+                
+                if (activity === 'climbing') {
+                    initClimbingActivity();
+                } else if (activity === 'rafting') {
+                    initRaftingActivity();
+                } else if (activity === 'aerial') {
+                    initAerialActivity();
+                }
+            });
+        });
+        
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.activity-modal');
+                modal.style.display = 'none';
+            });
+        });
+        
+        window.addEventListener('click', (event) => {
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        
+        // =============================================
+        // REPRODUCTOR DE MÚSICA
+        // =============================================
+        const songButtons = document.querySelectorAll('.song-btn');
+        const youtubePlayer = document.getElementById('youtube-player');
+        
+        songButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const videoId = button.getAttribute('data-video');
+                youtubePlayer.src = `https://www.youtube.com/embed/${videoId}`;
+                
+                songButtons.forEach(btn => {
+                    btn.style.background = 'var(--accent-light)';
+                    btn.style.color = 'var(--text-dark)';
+                });
+                button.style.background = 'linear-gradient(135deg, var(--accent-blue), var(--love-pink))';
+                button.style.color = 'white';
+            });
+        });
+        
+        // =============================================
+        // ACTIVIDAD DE ESCALADA MEJORADA
+        // =============================================
+        function initClimbingActivity() {
+            const climbingWall = document.getElementById('climbing-wall');
+            const climber = document.getElementById('climber');
+            const startButton = document.getElementById('start-climbing');
+            const resetButton = document.getElementById('reset-climbing');
+            const nextButton = document.getElementById('climbing-next');
+            const levelDisplay = document.getElementById('climbing-level');
+            const scoreDisplay = document.getElementById('climbing-score');
+            const timeDisplay = document.getElementById('climbing-time');
+            const completeMessage = document.getElementById('climbing-complete');
+            const progressBar = document.getElementById('climbing-progress');
+            
+            let currentLevel = 1;
+            let score = 0;
+            let timeLeft = 60;
+            let gameActive = false;
+            let timerInterval;
+            let handholds = [];
+            let currentOrder = 1;
+            let correctSequence = [];
+            let totalHandholds = 0;
+            
+            function createHandholds() {
+                // Limpiar agarres anteriores
+                const oldHandholds = climbingWall.querySelectorAll('.climbing-handhold');
+                oldHandholds.forEach(h => h.remove());
+                
+                handholds = [];
+                correctSequence = [];
+                currentOrder = 1;
+                
+                // Posicionar al escalador al inicio
+                climber.style.bottom = '20px';
+                climber.style.left = '50%';
+                
+                // Número de agarres según el nivel
+                const handholdCount = 5 + currentLevel;
+                totalHandholds = handholdCount;
+                const fakeCount = Math.floor(currentLevel / 2);
+                
+                // Crear secuencia correcta
+                for (let i = 1; i <= handholdCount; i++) {
+                    correctSequence.push(i);
+                }
+                
+                // Crear agarres reales
+                for (let i = 0; i < handholdCount; i++) {
+                    const handhold = document.createElement('div');
+                    handhold.className = 'climbing-handhold';
+                    handhold.textContent = correctSequence[i];
+                    
+                    const left = 15 + Math.random() * 70;
+                    const bottom = 80 + i * (350 / handholdCount);
+                    
+                    handhold.style.left = `${left}%`;
+                    handhold.style.bottom = `${bottom}px`;
+                    
+                    handhold.addEventListener('click', () => handleHandholdClick(handhold, false, correctSequence[i]));
+                    
+                    climbingWall.appendChild(handhold);
+                    handholds.push(handhold);
+                }
+                
+                // Crear agarres falsos
+                for (let i = 0; i < fakeCount; i++) {
+                    const handhold = document.createElement('div');
+                    handhold.className = 'climbing-handhold';
+                    handhold.textContent = '?';
+                    handhold.style.background = 'linear-gradient(135deg, var(--warning), #f57c00)';
+                    
+                    const left = 15 + Math.random() * 70;
+                    const bottom = 80 + Math.random() * 350;
+                    
+                    handhold.style.left = `${left}%`;
+                    handhold.style.bottom = `${bottom}px`;
+                    
+                    handhold.addEventListener('click', () => handleHandholdClick(handhold, true, 0));
+                    
+                    climbingWall.appendChild(handhold);
+                }
+                
+                progressBar.style.width = '0%';
+            }
+            
+            function handleHandholdClick(handhold, isFake, number) {
+                if (!gameActive) return;
+                
+                const rect = handhold.getBoundingClientRect();
+                const containerRect = climbingWall.getBoundingClientRect();
+                
+                if (isFake) {
+                    handhold.classList.add('wrong');
+                    timeLeft = Math.max(5, timeLeft - 10);
+                    setTimeout(() => {
+                        handhold.classList.remove('wrong');
+                    }, 500);
+                    return;
+                }
+                
+                if (number === currentOrder) {
+                    handhold.classList.add('active');
+                    
+                    // Crear partículas de celebración
+                    createParticles(rect.left - containerRect.left + 30, rect.top - containerRect.top + 30, climbingWall);
+                    
+                    currentOrder++;
+                    
+                    // Actualizar barra de progreso
+                    const progress = ((currentOrder - 1) / totalHandholds) * 100;
+                    progressBar.style.width = progress + '%';
+                    
+                    // Mover al escalador
+                    climber.style.bottom = handhold.style.bottom;
+                    climber.style.left = handhold.style.left;
+                    
+                    // Añadir puntos
+                    score += 15 * currentLevel;
+                    scoreDisplay.textContent = score;
+                    
+                    if (currentOrder > totalHandholds) {
+                        completeLevel();
+                    }
+                } else {
+                    handhold.classList.add('wrong');
+                    timeLeft = Math.max(5, timeLeft - 5);
+                    setTimeout(() => {
+                        handhold.classList.remove('wrong');
+                    }, 500);
+                }
+            }
+            
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    if (!gameActive) return;
+                    
+                    timeLeft--;
+                    timeDisplay.textContent = timeLeft;
+                    
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            }
+            
+            function completeLevel() {
+                gameActive = false;
+                clearInterval(timerInterval);
+                
+                score += timeLeft * 5;
+                scoreDisplay.textContent = score;
+                
+                progressBar.style.width = '100%';
+                completeMessage.style.display = 'block';
+            }
+            
+            function endGame() {
+                gameActive = false;
+                clearInterval(timerInterval);
+                alert(`¡Se acabó el tiempo! Puntuación final: ${score}`);
+                resetGame();
+            }
+            
+            function nextLevel() {
+                currentLevel++;
+                levelDisplay.textContent = currentLevel;
+                completeMessage.style.display = 'none';
+                startGame();
+            }
+            
+            function startGame() {
+                gameActive = true;
+                timeLeft = 60 - (currentLevel * 3);
+                timeDisplay.textContent = timeLeft;
+                
+                createHandholds();
+                startTimer();
+                
+                startButton.disabled = true;
+                resetButton.disabled = false;
+            }
+            
+            function resetGame() {
+                gameActive = false;
+                clearInterval(timerInterval);
+                currentLevel = 1;
+                score = 0;
+                
+                levelDisplay.textContent = currentLevel;
+                scoreDisplay.textContent = score;
+                timeDisplay.textContent = '60';
+                
+                completeMessage.style.display = 'none';
+                createHandholds();
+                
+                startButton.disabled = false;
+                resetButton.disabled = true;
+            }
+            
+            startButton.addEventListener('click', startGame);
+            resetButton.addEventListener('click', resetGame);
+            nextButton.addEventListener('click', nextLevel);
+            
+            resetGame();
+        }
+        
+        // =============================================
+        // ACTIVIDAD DE RAFTING MEJORADA
+        // =============================================
+        function initRaftingActivity() {
+            const raftingRiver = document.getElementById('rafting-river');
+            const raftingBoat = document.getElementById('rafting-boat');
+            const startButton = document.getElementById('start-rafting');
+            const resetButton = document.getElementById('reset-rafting');
+            const nextButton = document.getElementById('rafting-next');
+            const levelDisplay = document.getElementById('rafting-level');
+            const distanceDisplay = document.getElementById('rafting-distance');
+            const livesDisplay = document.getElementById('rafting-lives');
+            const completeMessage = document.getElementById('rafting-complete');
+            const progressBar = document.getElementById('rafting-progress');
+            
+            let currentLevel = 1;
+            let distance = 0;
+            let lives = 3;
+            let gameActive = false;
+            let gameInterval;
+            let obstacles = [];
+            let boatPosition = 50;
+            let riverSpeed = 2;
+            let targetDistance = 100;
+            
+            function updateLivesDisplay() {
+                let heartsStr = '';
+                for (let i = 0; i < lives; i++) {
+                    heartsStr += '❤️';
+                }
+                for (let i = lives; i < 3; i++) {
+                    heartsStr += '🖤';
+                }
+                livesDisplay.textContent = heartsStr;
+            }
+            
+            function createObstacles() {
+                obstacles.forEach(obstacle => obstacle.element.remove());
+                obstacles = [];
+                
+                const obstacleCount = 8 + currentLevel * 2;
+                
+                for (let i = 0; i < obstacleCount; i++) {
+                    const obstacle = document.createElement('div');
+                    obstacle.className = 'rafting-obstacle';
+                    
+                    const obstacleType = Math.floor(Math.random() * 3);
+                    if (obstacleType === 0) {
+                        obstacle.classList.add('rock');
+                    } else if (obstacleType === 1) {
+                        obstacle.classList.add('whirlpool');
+                    }
+                    
+                    const left = 120 + (i * 150 / obstacleCount);
+                    const top = 10 + Math.random() * 70;
+                    
+                    obstacle.style.left = `${left}%`;
+                    obstacle.style.top = `${top}%`;
+                    
+                    raftingRiver.appendChild(obstacle);
+                    obstacles.push({
+                        element: obstacle,
+                        left: left,
+                        top: top
+                    });
+                }
+            }
+            
+            function moveObstacles() {
+                obstacles.forEach(obstacle => {
+                    obstacle.left -= riverSpeed;
+                    obstacle.element.style.left = `${obstacle.left}%`;
+                    
+                    if (obstacle.left < -15) {
+                        obstacle.left = 120;
+                        obstacle.top = 10 + Math.random() * 70;
+                        obstacle.element.style.top = `${obstacle.top}%`;
+                        
+                        distance += 10;
+                        distanceDisplay.textContent = distance;
+                        
+                        const progress = Math.min((distance / targetDistance) * 100, 100);
+                        progressBar.style.width = progress + '%';
+                    }
+                });
+            }
+            
+            function checkCollisions() {
+                const boatLeft = boatPosition;
+                const boatTop = 70;
+                
+                for (let obstacle of obstacles) {
+                    const dx = Math.abs(obstacle.left - boatLeft);
+                    const dy = Math.abs(obstacle.top - boatTop);
+                    
+                    if (dx < 10 && dy < 15) {
+                        return obstacle;
+                    }
+                }
+                return null;
+            }
+            
+            function gameLoop() {
+                if (!gameActive) return;
+                
+                moveObstacles();
+                
+                const collision = checkCollisions();
+                if (collision) {
+                    loseLife(collision);
+                }
+                
+                if (distance >= targetDistance) {
+                    completeLevel();
+                }
+            }
+            
+            function loseLife(obstacle) {
+                lives--;
+                updateLivesDisplay();
+                
+                // Crear efecto visual de colisión
+                obstacle.element.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    obstacle.element.style.transform = 'scale(1)';
+                }, 300);
+                
+                if (lives <= 0) {
+                    endGame();
+                } else {
+                    // Reposicionar obstáculo que causó colisión
+                    obstacle.left = 120;
+                    obstacle.top = 10 + Math.random() * 70;
+                    obstacle.element.style.top = `${obstacle.top}%`;
+                }
+            }
+            
+            function completeLevel() {
+                gameActive = false;
+                clearInterval(gameInterval);
+                completeMessage.style.display = 'block';
+                progressBar.style.width = '100%';
+            }
+            
+            function endGame() {
+                gameActive = false;
+                clearInterval(gameInterval);
+                alert(`¡Game Over! Distancia recorrida: ${distance}m`);
+                resetGame();
+            }
+            
+            function nextLevel() {
+                currentLevel++;
+                levelDisplay.textContent = currentLevel;
+                completeMessage.style.display = 'none';
+                lives = 3;
+                updateLivesDisplay();
+                startGame();
+            }
+            
+            function startGame() {
+                gameActive = true;
+                distance = 0;
+                riverSpeed = 2 + currentLevel * 0.4;
+                targetDistance = 100 + currentLevel * 20;
+                
+                distanceDisplay.textContent = distance;
+                progressBar.style.width = '0%';
+                
+                boatPosition = 50;
+                raftingBoat.style.left = `${boatPosition}%`;
+                
+                createObstacles();
+                gameInterval = setInterval(gameLoop, 50);
+                
+                startButton.disabled = true;
+                resetButton.disabled = false;
+            }
+            
+            function resetGame() {
+                gameActive = false;
+                clearInterval(gameInterval);
+                currentLevel = 1;
+                distance = 0;
+                lives = 3;
+                
+                levelDisplay.textContent = currentLevel;
+                distanceDisplay.textContent = distance;
+                updateLivesDisplay();
+                
+                completeMessage.style.display = 'none';
+                progressBar.style.width = '0%';
+                createObstacles();
+                
+                boatPosition = 50;
+                raftingBoat.style.left = `${boatPosition}%`;
+                
+                startButton.disabled = false;
+                resetButton.disabled = true;
+            }
+            
+            // Control del teclado
+            const keyHandler = (event) => {
+                if (!gameActive) return;
+                
+                if (event.key === 'ArrowLeft' && boatPosition > 15) {
+                    boatPosition -= 5;
+                } else if (event.key === 'ArrowRight' && boatPosition < 85) {
+                    boatPosition += 5;
+                }
+                
+                raftingBoat.style.left = `${boatPosition}%`;
+            };
+            
+            document.addEventListener('keydown', keyHandler);
+            
+            startButton.addEventListener('click', startGame);
+            resetButton.addEventListener('click', resetGame);
+            nextButton.addEventListener('click', nextLevel);
+            
+            resetGame();
+        }
+        
+        // =============================================
+        // ACTIVIDAD DE CIRCUITO AÉREO MEJORADA
+        // =============================================
+        function initAerialActivity() {
+            const aerialCourse = document.getElementById('aerial-course');
+            const aerialCharacter = document.getElementById('aerial-character');
+            const startButton = document.getElementById('start-aerial');
+            const resetButton = document.getElementById('reset-aerial');
+            const nextButton = document.getElementById('aerial-next');
+            const levelDisplay = document.getElementById('aerial-level');
+            const progressDisplay = document.getElementById('aerial-progress');
+            const scoreDisplay = document.getElementById('aerial-score');
+            const completeMessage = document.getElementById('aerial-complete');
+            const progressBar = document.getElementById('aerial-progress-bar');
+            
+            let currentLevel = 1;
+            let progress = 0;
+            let score = 0;
+            let gameActive = false;
+            let platforms = [];
+            let ropes = [];
+            let currentPlatform = 0;
+            let balance = 100;
+            let balanceInterval;
+            
+            function createClouds() {
+                // Limpiar nubes anteriores
+                const oldClouds = aerialCourse.querySelectorAll('.cloud');
+                oldClouds.forEach(c => c.remove());
+                
+                for (let i = 0; i < 6; i++) {
+                    const cloud = document.createElement('div');
+                    cloud.className = 'cloud';
+                    
+                    const size = 40 + Math.random() * 80;
+                    const top = 10 + Math.random() * 80;
+                    const delay = Math.random() * 20;
+                    
+                    cloud.style.width = `${size}px`;
+                    cloud.style.height = `${size/2}px`;
+                    cloud.style.top = `${top}%`;
+                    cloud.style.left = `${100 + Math.random() * 50}%`;
+                    cloud.style.animation = `cloudFloat ${20 + Math.random() * 10}s linear infinite`;
+                    cloud.style.animationDelay = `${delay}s`;
+                    
+                    // Crear formas de nube
+                    const before = document.createElement('div');
+                    before.style.width = `${size * 0.5}px`;
+                    before.style.height = `${size * 0.5}px`;
+                    before.style.left = `-${size * 0.2}px`;
+                    before.style.top = `-${size * 0.1}px`;
+                    
+                    const after = document.createElement('div');
+                    after.style.width = `${size * 0.6}px`;
+                    after.style.height = `${size * 0.6}px`;
+                    after.style.right = `-${size * 0.25}px`;
+                    after.style.top = `-${size * 0.15}px`;
+                    
+                    aerialCourse.appendChild(cloud);
+                }
+            }
+            
+            function createPlatforms() {
+                // Limpiar plataformas y cuerdas anteriores
+                platforms.forEach(p => p.element.remove());
+                ropes.forEach(r => r.remove());
+                platforms = [];
+                ropes = [];
+                
+                const platformCount = 6 + currentLevel;
+                
+                for (let i = 0; i < platformCount; i++) {
+                    const platform = document.createElement('div');
+                    platform.className = 'aerial-platform';
+                    
+                    const left = 15 + (i * 70 / platformCount);
+                    const top = 30 + Math.sin(i * 0.8) * 30;
+                    
+                    platform.style.left = `${left}%`;
+                    platform.style.top = `${top}%`;
+                    
+                    platform.addEventListener('click', () => handlePlatformClick(i, platform));
+                    
+                    aerialCourse.appendChild(platform);
+                    platforms.push({
+                        element: platform,
+                        left: left,
+                        top: top,
+                        index: i
+                    });
+                    
+                    // Crear cuerdas entre plataformas
+                    if (i > 0) {
+                        const rope = document.createElement('div');
+                        rope.className = 'aerial-rope';
+                        
+                        const prevPlatform = platforms[i-1];
+                        const dx = (left - prevPlatform.left);
+                        const dy = (top - prevPlatform.top);
+                        const length = Math.sqrt(dx*dx + dy*dy);
+                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                        
+                        rope.style.width = `${length}%`;
+                        rope.style.left = `${prevPlatform.left}%`;
+                        rope.style.top = `${prevPlatform.top + 1.5}%`;
+                        rope.style.transform = `rotate(${angle}deg)`;
+                        
+                        aerialCourse.appendChild(rope);
+                        ropes.push(rope);
+                    }
+                }
+            }
+            
+            function handlePlatformClick(platformIndex, platformElement) {
+                if (!gameActive) return;
+                
+                if (platformIndex === currentPlatform) {
+                    const platform = platforms[platformIndex];
+                    
+                    // Crear partículas
+                    const rect = platformElement.getBoundingClientRect();
+                    const containerRect = aerialCourse.getBoundingClientRect();
+                    createParticles(rect.left - containerRect.left + 50, rect.top - containerRect.top + 12, aerialCourse);
+                    
+                    // Mover personaje
+                    aerialCharacter.style.left = `${platform.left}%`;
+                    aerialCharacter.style.top = `${platform.top - 5}%`;
+                    
+                    // Actualizar progreso
+                    currentPlatform++;
+                    progress = Math.floor((currentPlatform / platforms.length) * 100);
+                    progressDisplay.textContent = progress;
+                    progressBar.style.width = progress + '%';
+                    
+                    // Añadir puntos
+                    score += 25 * currentLevel;
+                    scoreDisplay.textContent = score;
+                    
+                    // Restaurar balance
+                    balance = Math.min(100, balance + 20);
+                    
+                    // Completar nivel
+                    if (currentPlatform >= platforms.length) {
+                        completeLevel();
+                    }
+                } else {
+                    // Click incorrecto
+                    balance = Math.max(0, balance - 25);
+                    platformElement.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        platformElement.style.transform = 'scale(1)';
+                    }, 300);
+                    
+                    if (balance <= 0) {
+                        endGame();
+                    }
+                }
+            }
+            
+            function updateBalance() {
+                if (!gameActive) return;
+                
+                balance = Math.max(0, balance - 0.3);
+                
+                if (balance <= 0) {
+                    endGame();
+                }
+                
+                // Efecto visual de desequilibrio
+                if (balance < 30) {
+                    const wobble = Math.sin(Date.now() / 100) * (30 - balance) / 3;
+                    aerialCharacter.style.transform = `rotate(${wobble}deg)`;
+                } else {
+                    aerialCharacter.style.transform = 'rotate(0deg)';
+                }
+            }
+            
+            function completeLevel() {
+                gameActive = false;
+                clearInterval(balanceInterval);
+                
+                score += balance * 2;
+                scoreDisplay.textContent = score;
+                
+                completeMessage.style.display = 'block';
+                progressBar.style.width = '100%';
+            }
+            
+            function endGame() {
+                gameActive = false;
+                clearInterval(balanceInterval);
+                alert(`¡Perdiste el equilibrio! Puntuación: ${score}`);
+                resetGame();
+            }
+            
+            function nextLevel() {
+                currentLevel++;
+                levelDisplay.textContent = currentLevel;
+                completeMessage.style.display = 'none';
+                startGame();
+            }
+            
+            function startGame() {
+                gameActive = true;
+                progress = 0;
+                currentPlatform = 0;
+                balance = 100;
+                
+                progressDisplay.textContent = progress;
+                progressBar.style.width = '0%';
+                
+                aerialCharacter.style.left = '10%';
+                aerialCharacter.style.top = '50%';
+                aerialCharacter.style.transform = 'rotate(0deg)';
+                
+                createPlatforms();
+                balanceInterval = setInterval(updateBalance, 100);
+                
+                startButton.disabled = true;
+                resetButton.disabled = false;
+            }
+            
+            function resetGame() {
+                gameActive = false;
+                clearInterval(balanceInterval);
+                currentLevel = 1;
+                progress = 0;
+                score = 0;
+                
+                levelDisplay.textContent = currentLevel;
+                progressDisplay.textContent = progress;
+                scoreDisplay.textContent = score;
+                progressBar.style.width = '0%';
+                
+                completeMessage.style.display = 'none';
+                createPlatforms();
+                createClouds();
+                
+                aerialCharacter.style.left = '10%';
+                aerialCharacter.style.top = '50%';
+                aerialCharacter.style.transform = 'rotate(0deg)';
+                
+                startButton.disabled = false;
+                resetButton.disabled = true;
+            }
+            
+            startButton.addEventListener('click', startGame);
+            resetButton.addEventListener('click', resetGame);
+            nextButton.addEventListener('click', nextLevel);
+            
+            resetGame();
+        }
+    </script>
+</body>
+</html>
